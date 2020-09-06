@@ -17,13 +17,17 @@ header {
   height: 70px;
   background-color: #fff;
   position: fixed;
-  z-index: 1;
+  z-index: 10;
   width: 100%;
 }
 
 .logo {
   padding-left: 20px;
   font-weight: 100;
+}
+.logo a {
+  text-decoration: none;
+  color: #1c1c1c;
 }
 .hamburgerButton {
   display: flex;
@@ -33,6 +37,7 @@ header {
   height: 40px;
   position: relative;
   cursor: pointer;
+  z-index: 20;
 }
 .menu-btn__burger {
   width: 20px;
@@ -56,7 +61,56 @@ header {
 .nav_Links {
   display: none;
 }
+
+.mobileNav {
+  height: 100vh;
+  width: 100%;
+  margin-top: 70px;
+  background: #1c1c1c;
+  display: flex;
+  z-index: 9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  transform: translateX(-100%);
+  transition: 0.8s ease;
+}
+.mobileNav ul {
+  list-style: none;
+  text-align: center;
+}
+.mobileNav li {
+  padding: 5% 0;
+}
+.mobileNav li a {
+  text-decoration: none;
+  color: rgb(192, 192, 192);
+  font-family: sans-serif;
+  font-weight: bold;
+  font-size: 10vw;
+}
+.mobileNav li a:hover {
+  color: #fff;
+}
+.appear {
+  transform: translateX(0);
+}
+@media (min-width: 659px) {
+  .mobileNav {
+    height: 160vh;
+  }
+}
+@media (min-width: 800px) {
+  .mobileNav {
+    height: 170vh;
+  }
+}
+
 @media (min-width: 1176px) {
+  .mobileNav {
+    display: none;
+  }
   header {
     padding: 0px 5%;
   }
